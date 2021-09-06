@@ -1,0 +1,31 @@
+PODS:
+  - Flutter (1.0.0)
+  - gdt_ads_flutter (0.0.1):
+    - Flutter
+    - GDTMobSDK
+  - GDTMobSDK (4.13.02):
+    - GDTMobSDK/GDTMobSDK (= 4.13.02)
+  - GDTMobSDK/GDTMobSDK (4.13.02)
+
+DEPENDENCIES:
+  - Flutter (from `Flutter`)
+  - gdt_ads_flutter (from `.symlinks/plugins/gdt_ads_flutter/ios`)
+
+SPEC REPOS:
+  trunk:
+    - GDTMobSDK
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: Flutter
+  gdt_ads_flutter:
+    :path: ".symlinks/plugins/gdt_ads_flutter/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 434fef37c0980e73bb6479ef766c45957d4b510c
+  gdt_ads_flutter: 5e9f57fb37ce90a87e9abda06ee4192797e5b4ff
+  GDTMobSDK: c614fccaf8267a6fd6eeecb0501d7cd804326003
+
+PODFILE CHECKSUM: 8e679eca47255a8ca8067c4c67aab20e64cb974d
+
+COCOAPODS: 1.10.2
