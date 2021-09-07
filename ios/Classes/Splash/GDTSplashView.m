@@ -19,6 +19,7 @@
     int64_t _viewId;
     FlutterMethodChannel* _channel;
     BOOL _isShowLog;
+    UIWindow *container;
 }
 
 - (instancetype)initWithWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id)args binaryMessenger:(NSObject<FlutterBinaryMessenger> *)messenger {
@@ -31,16 +32,16 @@
     NSNumber *isShowLog = dic[@"isShowLog"];
     _isShowLog = [isShowLog boolValue];
     
-    self.container = [[UIWindow alloc] initWithFrame:frame];
+    container = [[UIWindow alloc] initWithFrame:frame];
     //重要！！将app的rootViewController赋给container
-    self.container.rootViewController = [[UIApplication sharedApplication] keyWindow].rootViewController;
+    container.rootViewController = [[UIApplication sharedApplication] keyWindow].rootViewController;
     [self loadSplash:placementId];
     _viewId = viewId;
     return self;
 }
 
 - (nonnull UIView *)view {
-    return self.container;
+    return container;
 }
 
 -(void)loadSplash: (NSString*)content {
@@ -58,7 +59,7 @@
     [self showDebugLog:@"广告拉取成功"];
     [_channel invokeMethod:@"onLoad" arguments:@"广告拉取成功"];
     if ([self.splashAd isAdValid]) {
-        [self.splashAd showAdInWindow:self.container withBottomView:nil skipView:nil];
+        [self.splashAd showAdInWindow:container withBottomView:nil skipView:nil];
     }
 }
 

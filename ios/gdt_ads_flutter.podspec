@@ -4,7 +4,7 @@
 #
 Pod::Spec.new do |s|
   s.name             = 'gdt_ads_flutter'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = 'A new Flutter project.'
   s.description      = <<-DESC
 A new Flutter project.
@@ -18,6 +18,7 @@ A new Flutter project.
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
   s.dependency 'GDTMobSDK'
+  s.static_framework = true
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
