@@ -10,7 +10,7 @@
 ## 集成步骤
 #### 1、pubspec.yaml
 ```Dart
-gdt_ads_flutter: ^0.0.1
+gdt_ads_flutter: ^0.0.3
 ```
 
 #### 2、IOS
