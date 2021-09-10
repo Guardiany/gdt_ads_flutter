@@ -59,35 +59,37 @@ GdtAdsFlutter.splashView(
 ```
 #### 4、激励视频
 ```Dart
-GdtAdsFlutter.rewardVideoView(
-        context: context,
-        placementId: '你的广告位ID',
-        videoMuted: true,
-        callback: RewardVideoCallback(
-          onLoad: () {
-            print('onLoad');
-          },
-          onFail: (error) {
-            print('$error');
-          },
-          onShow: () {
-            print('onShow');
-          },
-          onClick: () {
-            print('onClick');
-          },
-          onFinish: () {
-            print('onFinish');
-          },
-          onClose: () {
-            print('onClose');
-            Navigator.pop(context);
-          },
-          onReward: () {
-            print('onReward');
-          },
-        ),
-      ),
+_rewardVideoStream = GdtAdsFlutter.initRewardStream(RewardVideoCallback(
+      onLoad: () {
+        print('onLoad');
+        loadComplete = true;
+      },
+      onFail: (error) {
+        print('$error');
+      },
+      onShow: () {
+        print('onShow');
+      },
+      onClick: () {
+        print('onClick');
+      },
+      onFinish: () {
+        print('onFinish');
+      },
+      onClose: () {
+        print('onClose');
+        _loadRewardVideo();
+      },
+      onReward: () {
+        print('onReward');
+      },
+    ));
+
+GdtAdsFlutter.loadReardVideo(placementId: '4072435033794278');
+
+if (loadComplete) {
+  GdtAdsFlutter.showReardVideo(context: context);
+}
 ```
 
 ## 联系方式
